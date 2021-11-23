@@ -87,12 +87,18 @@ void mousePressed() {
     }
   }
   if (onLevel1) {
+    if(gg == true){
+      resetLvl1();
+      gg = false;
+      onLevel1 = false;
+      onLevelSelect = true;
+    }
     if (back.MouseIsOver()) {
       back.drawClickedButton();
       onLevel1 = false;
       onLevelSelect = true;
-      c1.Reset();
-      lvlReset();
+//      c1.Reset();
+//      lvlReset();
     }
     
   }

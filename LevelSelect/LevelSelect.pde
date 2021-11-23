@@ -1,3 +1,5 @@
+import processing.sound.*;
+
 Button startButton = new Button();   //Start Button
 Button exitButton = new Button();    //Exit Button
 Button level1 = new Button();
@@ -7,6 +9,7 @@ Button back = new Button();
 Button inventory = new Button();
 character c1 = new character();
 
+boolean gg;
 PImage bgrnd;
 PImage scuba;
 PImage logo;
@@ -37,8 +40,11 @@ int invCount = 0;
 int equipped;
 float c1Ang;
 float c1Rad;
+int score;
 
 void setup() {
+  gg = false;
+  score =0;
   size(1280, 720);
   float startX = width/11 - 50;
   float startY = height/4;
@@ -206,7 +212,6 @@ void setup() {
   alg = new entity("Algae", 6850, 240, 100, 100, 2, 3, 170,0,0);
   lvl1entities[lvl1occ] = alg;
   lvl1occ+=1;  
-  println("l1l ", lvl1occ);
 }
 
 void draw() {
@@ -285,4 +290,7 @@ void displayMenu() {
 void displayLevelSelect() {
   c1.loaded = false;
   image(levelMap, 5, 0);
+  textSize(45);
+  fill(0);
+  text("TO BEAT EACH LEVEL REACH THE\n END WITH A SCORE OF 250. EACH ALGAE IS \n WORTH 10 POINTS", 369,420);
 }
